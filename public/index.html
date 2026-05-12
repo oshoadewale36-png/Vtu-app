@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyAccess VTU</title>
+
+     <script src="https://js.paystack.co/v1/inline.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+ </head>
+
+<body>
+   <header>
+      <h1>EasyAccess VTU </h1>
+   </header>
+
+      <div class="card balance-card">
+         <h2>Wallet Balance</h2>
+         <h1>₦<span id="balance">0</span></h1>
+
+         <button onclick="getBalance()">
+            Refresh Balance
+         </button>
+
+      <section id="auth">
+       <div class="card">
+      <h2>Register</h2>
+
+      <input type="text"
+       id="regusterUsername"
+       placeholder="username">
+
+      <input type="password"
+       id="registerPassword" 
+       placeholder="Password">
+
+      <button onclick="register()">
+         Register
+      </button>
+
+       <hr>
+
+
+   <h2>Login</h2>
+
+   <input type="text"
+    id="loginUsername"
+     placeholder="Username">
+
+   <input type="password"
+    id="loginPassword" 
+    placeholder="Password">
+
+   <button onclick="login()">
+      Login
+   </button>
+</secttion>
+
+<hr>
+
+
+   <section id="Wallet"> style="display:none;">
+       <div class="card">
+
+   <h2> Wallet Dashboard</h2>
+
+   <h3>Balance: <span id="balance">₦0</span></h3>
+
+   <button onclick="creatWallet()">
+      Create Wallet
+   </button>
+
+   <button onclick="payWithPaystack()">
+      Fund Wallet
+   </button>
+</section>
+<hr>
+
+  <section id="services" style="display:none;">
+     
+   <h2>Services</h2>
+
+   <h3>Buy Airtime</h3>
+   <input id="airtimeNetwork" placeholder="Network">
+   <input id="airtimePhone" placeholder="Phone Number">
+   <input id="airtimeAmount" placeholder="Amount">
+   <button onclick="buyAirtime()">
+      Buy Airtime
+   </button>
+<hr>
+
+   <h3>Buy Data</h3>
+   <input id="dataNetwork" placeholder="Network">
+   <input id="dataPhone" placeholder="Phone Number">
+   <input id="dataAmount" placeholder="plan (1GB, 2GB, etc.)">
+   <input id="dataAmount" placeholder="Amount">
+   <button onclick="buyData()">
+      Buy Data
+   </button>
+   <hr>
+   <button onclick="getTransactions()">
+   Transactions History
+   </button>
+   <hr>
+   <div id="result"></div>
+</section>
+
+ <footer>
+    <p>@ 2026 My QuickVTU | powere by ADEWALE.</p>
+ </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
