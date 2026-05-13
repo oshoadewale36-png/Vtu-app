@@ -17,6 +17,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.send("API is working");
+});
 const PAYSTACK_SECRET_KEY = "sk_test_acc29197b628316c44b819132e2698083cdfb884";
 
 
