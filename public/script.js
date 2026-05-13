@@ -8,7 +8,7 @@ async function register() {
     const password =
      document.getElementById("registerPassword").value;
 
-    const response = await fetch("http://vtu-backend-lcve.onrender.com", {
+    const response = await fetch("http://vtu-backend-lcve.onrender.com/register", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -33,7 +33,7 @@ async function login() {
     const password =
      document.getElementById("loginPassword").value;
 
-    const response = await fetch("http://vtu-backend-lcve.onrender.com", {
+    const response = await fetch("http://vtu-backend-lcve.onrender.com/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -55,7 +55,7 @@ async function login() {
 }
 async function createWallet() {
 
-    const res = await fetch("http://vtu-backend-lcve.onrender.com", {
+    const res = await fetch("http://vtu-backend-lcve.onrender.com/wallet", {
         method: "POST",
         headers: {
             "Authorization": `Bearer + {localStorage.getItem("token")}`
@@ -72,7 +72,7 @@ async function fundWallet() {
     const amount = 
     Number(document.getElementById("fundAmount").value);
 
-    const res = await fetch("http://vtu-backend-lcve.onrender.com", {
+    const res = await fetch("http://vtu-backend-lcve.onrender.com/wallet/fund", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -97,7 +97,7 @@ async function buyAirtime() {
     const phone = document.getElementById("airtimePhone").value;
     const amount = Number(document.getElementById("airtimeAmount").value);
 
-    const res = await fetch("http://vtu-backend-lcve.onrender.com", {
+    const res = await fetch("http://vtu-backend-lcve.onrender.com/airtime", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -121,7 +121,7 @@ async function buyData() {
     const plan = document.getElementById("dataPlan").value;
     const amount = Number(document.getElementById("dataAmount").value);
 
-    const res = await fetch("http://vtu-backend-lcve.onrender.com", {
+    const res = await fetch("http://vtu-backend-lcve.onrender.com/data", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -141,7 +141,7 @@ async function buyData() {
 }
 async function getTransactions() {
 
-    const res = await fetch("http://vtu-backend-lcve.onrender.com", {
+    const res = await fetch("http://vtu-backend-lcve.onrender.com/transactions", {
         method: "GET",
         headers: {
             Authorization:
@@ -181,7 +181,7 @@ async function getTransactions() {
 }
 
 async function getBalance() {
-    const res = await fetch("http://vtu-backend-lcve.onrender.com", {
+    const res = await fetch("http://vtu-backend-lcve.onrender.com/wallet/balance", {
         method: "GET",
         headers: {
             Authorization: "Bearer " + localStorage.getItem("token")
