@@ -349,8 +349,13 @@ app.get("/balance", auth, async (req, res) => {
         }); 
     }
 });
+
+app.get("/", (req, res) => {
+    res.send("VTU Backend is Running successfully");
+});
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => { 
-    console.log("Server running on port " + PORT);
+    console.log("Server running on " + PORT);
 });
