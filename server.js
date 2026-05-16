@@ -1,4 +1,4 @@
-req
+require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
@@ -20,7 +20,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
     res.send("API is working");
 });
-const PAYSTACK_SECRET_KEY = "sk_test_acc29197b628316c44b819132e2698083cdfb884";
+const PAYSTACK_SECRET_KEY ="sk_test_acc29197b628316c44b819132e2698083cdfb884";
 
 
 mongoose.connect ("mongodb://oshoadewale36_db_user:vtu12345@ac-worgcju-shard-00-00.wqte5yd.mongodb.net:27017,ac-worgcju-shard-00-01.wqte5yd.mongodb.net:27017,ac-worgcju-shard-00-02.wqte5yd.mongodb.net:27017/?ssl=true&replicaSet=atlas-et1fki-shard-0&authSource=admin&appName=Cluster0",)
