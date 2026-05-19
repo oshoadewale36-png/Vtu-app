@@ -8,6 +8,7 @@ const bcrypt = require("bcryptjs");
 const  axios = require("axios");
 const walletRoutes = require("./routes/wallet");
 const airtimeRoutes = require("./routes/airtime");
+const transactionRoutes = require("./routes/transaction");
 
 const User = require("./models/user");
 const Wallet = require("./models/Wallet");
@@ -20,6 +21,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/wallet", walletRoutes);
 app.use("/airtime", airtimeRoutes);
+app.use("/transactions", transactionRoutes);
 
 app.get("/", (req, res) => {
     res.send("API is working");

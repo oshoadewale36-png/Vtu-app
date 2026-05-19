@@ -3,6 +3,7 @@ const router = express.Router();
 const axios = require("axios");
 
 const Wallet = require("../models/Wallet");
+const Transaction = require("../models/Transaction");
 
 // BUY AIRTIME
 router.post("/buy", async (req, res) => {
@@ -38,6 +39,14 @@ router.post("/buy", async (req, res) => {
                 },
             }
         );
+        await Transaction.create({
+            userId,
+            type: "airtime",
+            amount,
+            status: "success",
+            phone,
+            network
+        });
 
         res.json({
             message: "Airtime purchase successful",
